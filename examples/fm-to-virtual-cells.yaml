@@ -3092,3 +3092,292 @@ items:
     org_type: academic
     region: US
     why: "TxGNN, TDC-2 creator; KG-FM-therapeutics axis."
+
+  # ------------------------------------ 2026-05 batch: new papers/tools/people
+  - id: scpeft-natmi-2025
+    kind: paper
+    name: "scPEFT — parameter-efficient fine-tuning for single-cell LLMs"
+    authors: "He et al."
+    venue: "Nature Machine Intelligence"
+    year: 2025
+    url: "https://www.nature.com/articles/s42256-025-01170-z"
+    topics: [single-cell, foundation-model]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Adapter-style PEFT cuts scLLM fine-tuning to <4% params and beats zero-shot — practical answer to the reckoning."
+
+  - id: unagi-natbme-2025
+    kind: paper
+    name: "UNAGI — generative model for cellular dynamics + in-silico drug discovery"
+    authors: "Ding lab et al."
+    venue: "Nature Biomedical Engineering"
+    year: 2025
+    url: "https://www.nature.com/articles/s41551-025-01423-7"
+    topics: [single-cell, generative, drug-design, clinical]
+    status: published
+    org_type: academic
+    region: US
+    why: "Time-series scRNA generative model used as a virtual-disease simulator for in-silico perturbation screens."
+
+  - id: deeprare-nature-2026
+    kind: paper
+    name: "DeepRare — agentic system for rare-disease diagnosis with traceable reasoning"
+    authors: "Zhao et al."
+    venue: "Nature"
+    year: 2026
+    url: "https://www.nature.com/articles/s41586-025-10097-9"
+    topics: [agents, clinical, foundation-model]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Multi-agent LLM diagnosis system that outperformed physicians on rare-disease cases — the agentic-clinical proof point."
+    papermap_category: agentic
+
+  - id: hex-natmed-2026
+    kind: paper
+    name: "HEX — virtual spatial proteomics from histopathology for lung-cancer biomarkers"
+    authors: "Xiang et al."
+    venue: "Nature Medicine"
+    year: 2026
+    url: "https://www.nature.com/articles/s41591-025-04060-4"
+    topics: [pathology, spatial, proteomics, clinical, multimodal]
+    status: published
+    org_type: academic
+    region: US
+    why: "H&E → 40-protein spatial proteomics; +22% prognostic, +24-39% immunotherapy-response prediction across 2298 NSCLC patients."
+
+  - id: aging-clocks-cell-2026
+    kind: paper
+    name: "Multimodal clocks of human aging"
+    authors: "Guang-Hui Liu et al."
+    venue: "Cell"
+    year: 2026
+    url: "https://www.cell.com/cell/abstract/S0092-8674(26)00460-5"
+    topics: [multimodal, clinical, digital-twin]
+    status: published
+    org_type: academic
+    region: CN
+    why: "mCAS cohort (2019 individuals) → core-capacity / multimodal / organ-specific aging clocks; MAE 3.87y on chronological age."
+
+  - id: keep-cancercell
+    kind: paper
+    name: "KEEP — knowledge-enhanced pathology vision-language foundation model"
+    authors: "MAGIC-AI4Med (SJTU + Shanghai AI Lab)"
+    venue: "Cancer Cell"
+    year: 2025
+    url: "https://github.com/MAGIC-AI4Med/KEEP"
+    topics: [pathology, foundation-model, multimodal, clinical]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Knowledge-graph-conditioned pathology VLM from Shanghai Jiao Tong — Chinese answer to PathChat/Virchow."
+
+  - id: aivm-trends-biochem-2026
+    kind: review
+    name: "AI revolutionizes cellular metabolic pathway reconstruction (AIVM review)"
+    venue: "Trends in Biochemical Sciences"
+    year: 2026
+    url: "https://www.cell.com/trends/biochemical-sciences/fulltext/S0968-0004(26)00003-4"
+    topics: [signaling, multimodal, foundation-model]
+    status: published
+    org_type: outlet
+    region: global
+    why: "Names the metabolism-flavoured AIVC subfield (AI Virtual Metabolism) as a coherent agenda."
+
+  - id: montazeri-eval-2026
+    kind: paper
+    name: "Evaluating single-cell perturbation response models is far from straightforward"
+    authors: "Heidari, Karimpour, Srivatsa & Montazeri"
+    venue: "bioRxiv"
+    year: 2026
+    url: "https://www.biorxiv.org/content/10.64898/2026.02.14.705879v1"
+    topics: [eval, perturbation-prediction, single-cell]
+    status: preprint
+    org_type: academic
+    region: global
+    why: "Second front in the perturbation-evaluation reckoning — Wasserstein/Energy distances mislead in high-dim gene space."
+    papermap_category: reckoning
+
+  - id: pertpy-natmeth-2025
+    kind: tool
+    name: "Pertpy — end-to-end framework for perturbation analysis"
+    authors: "Heumos, Ji, May, Theis et al."
+    venue: "Nature Methods"
+    year: 2025
+    url: "https://github.com/scverse/pertpy"
+    topics: [perturb-seq, single-cell, perturbation-prediction, eval]
+    status: launched
+    org_type: academic
+    region: EU
+    why: "scverse-blessed perturbation toolbox — distances, perturbation spaces, harmonisation. The canonical analysis layer."
+
+  - id: dia-bert-natcomm-2025
+    kind: paper
+    name: "DIA-BERT — pre-trained transformer for DIA proteomics"
+    authors: "Tiannan Guo lab et al."
+    venue: "Nature Communications"
+    year: 2025
+    url: "https://www.nature.com/articles/s41467-025-58866-4"
+    topics: [proteomics, mass-spec, foundation-model]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Transformer pre-trained on 276M peptide precursors; +51% protein IDs vs DIA-NN. Westlake's bid for proteomics FM."
+
+  - id: sctranslator-natbme-2025
+    kind: paper
+    name: "scTranslator — transcriptome→proteome generative model"
+    authors: "Jianhua Yao et al."
+    venue: "Nature Biomedical Engineering"
+    year: 2025
+    url: "https://www.nature.com/articles/s41551-025-01528-z"
+    topics: [single-cell, multimodal, proteomics, generative]
+    status: published
+    org_type: industry
+    region: CN
+    why: "Tencent AI Lab — align-free scRNA→protein generation pretrained on 2M cells + 18k bulk samples."
+
+  - id: causcell-natcomm-2025
+    kind: paper
+    name: "CausCell — causal disentanglement + counterfactual single-cell generation"
+    authors: "Qi Liu lab (Tongji) et al."
+    venue: "Nature Communications"
+    year: 2025
+    url: "https://www.nature.com/articles/s41467-025-62008-1"
+    topics: [causal, single-cell, generative, diffusion, interpretability]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Structural causal model + diffusion → interpretable cellular representations with explicit cDAGs. Counter-position to black-box scLLMs."
+    papermap_category: contrarian_theory
+
+  - id: stamp-cell-2025
+    kind: paper
+    name: "STAMP — single-cell transcriptomics + multimodal profiling through imaging"
+    authors: "Qi Liu lab et al."
+    venue: "Cell"
+    year: 2025
+    url: "https://www.cell.com/cell/fulltext/S0092-8674(25)00577-X"
+    topics: [spatial, single-cell, imaging, multimodal]
+    status: published
+    org_type: academic
+    region: CN
+    why: "Turns Xenium/CosMx/MERSCOPE/PhenoCycler into scalable single-cell profilers — wet-lab counterpart to virtual spatial proteomics."
+
+  - id: vcworld-arxiv-2025
+    kind: paper
+    name: "VCWorld — biological world model for virtual cell simulation"
+    authors: "Shuangjia Zheng lab et al."
+    venue: "arXiv"
+    year: 2025
+    url: "https://arxiv.org/abs/2512.00306"
+    topics: [virtual-cell, perturbation-prediction, interpretability, agents]
+    status: preprint
+    org_type: academic
+    region: CN
+    why: "White-box LLM-driven simulator: stepwise mechanistic reasoning, SOTA on drug-perturbation benchmarks. Anti-black-box alternative."
+    papermap_category: arch_response
+
+  - id: merci-cellmetab
+    kind: paper
+    name: "MERCI — mitochondrial-receiver cell detection in tumours"
+    venue: "Cell Metabolism"
+    url: "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(23)00468-0"
+    topics: [single-cell, signaling, clinical]
+    status: published
+    org_type: academic
+    region: global
+    why: "Computational method spotting cells with mitochondrial-transfer signatures — used as motivation in AIVM commentary."
+
+  - id: drugclip-neurips-2023
+    kind: paper
+    name: "DrugCLIP — contrastive protein-molecule virtual screening"
+    venue: "NeurIPS 2023"
+    year: 2023
+    url: "https://arxiv.org/abs/2310.06367"
+    topics: [drug-design, multimodal, foundation-model]
+    status: published
+    org_type: academic
+    region: CN
+    why: "CLIP for protein-molecule retrieval — zero-shot virtual screen baseline that DrugReflector and successors build on."
+
+  - id: drugreflector
+    kind: tool
+    name: "DrugReflector"
+    year: 2026
+    topics: [drug-design, foundation-model, agents]
+    status: launched
+    org_type: biotech
+    region: global
+    why: "2026 AI drug-screening foundation model picked up in industry coverage — provenance still firming up."
+
+  - id: evolen
+    kind: tool
+    name: "EvoLen"
+    topics: [protein, foundation-model]
+    status: name-only
+    org_type: academic
+    region: global
+    why: "EvoLen — name only; protein/evolution model, watch the literature."
+
+  - id: scpformer
+    kind: tool
+    name: "scpFormer"
+    topics: [single-cell, foundation-model, perturbation-prediction]
+    status: name-only
+    org_type: academic
+    region: global
+    why: "scpFormer — name only; transformer for single-cell perturbation, no paper yet."
+
+  - id: scfocal
+    kind: tool
+    name: "scFOCAL"
+    topics: [single-cell, foundation-model]
+    status: name-only
+    org_type: academic
+    region: global
+    why: "scFOCAL — name only."
+
+  - id: sc-psilac
+    kind: tool
+    name: "SC-pSILAC"
+    authors: "Zilu Ye"
+    topics: [proteomics, mass-spec, single-cell]
+    status: rumored
+    org_type: academic
+    region: CN
+    why: "Single-cell pSILAC variant — Zilu Ye attribution from talk notes, not yet citable."
+
+  - id: xi-peng-person
+    kind: person
+    name: "Xi Peng"
+    venue: "Xlearning Lab, Sichuan University"
+    url: "https://pengxi.me/"
+    topics: [foundation-model, multimodal]
+    status: launched
+    org_type: academic
+    region: CN
+    why: "Xlearning lab PI — multimodal-learning angle into virtual-cell territory."
+
+  - id: jianhua-yao-person
+    kind: person
+    name: "Jianhua Yao"
+    venue: "Tencent AI Lab"
+    url: "https://scholar.google.com/citations?user=3bQwlCQAAAAJ"
+    topics: [foundation-model, single-cell, multimodal]
+    status: launched
+    org_type: industry
+    region: CN
+    why: "scTranslator PI, AIMBE fellow — Tencent's bio-FM lead."
+
+  - id: qi-liu-person
+    kind: person
+    name: "Qi Liu"
+    venue: "Tongji University"
+    url: "https://bm2-lab.github.io/"
+    topics: [single-cell, causal, spatial, eval]
+    status: launched
+    org_type: academic
+    region: CN
+    why: "BM2 Lab — CausCell, STAMP, scPerturBench. Methods-critique + tooling powerhouse from China."
