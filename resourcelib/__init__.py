@@ -9,13 +9,26 @@ unknown tags.
 resourcelib pairs with `papermap`: items in a resourcelib YAML that carry
 `kind: paper` plus a `papermap_category:` field can be exported as
 papermap node-stubs via `resourcelib export --to-papermap`.
+
+Plugins (separate packages like `resourcelib-views`) consume the same
+`Doc` / `Item` data model and the aggregation helpers in
+`resourcelib.aggregate` to add new outputs without bloating the core.
 """
 
+from .aggregate import (
+    items_by_kind,
+    items_by_status,
+    items_by_topic,
+    iter_papermap_eligible,
+    kind_counts,
+    status_counts,
+    topic_counts,
+)
+from .renderer import render
 from .schema import Doc, Item, Vocab, load
 from .validator import ValidationError, validate
-from .renderer import render
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
     "Doc",
     "Item",
@@ -24,4 +37,11 @@ __all__ = [
     "validate",
     "ValidationError",
     "render",
+    "items_by_kind",
+    "items_by_status",
+    "items_by_topic",
+    "iter_papermap_eligible",
+    "kind_counts",
+    "status_counts",
+    "topic_counts",
 ]

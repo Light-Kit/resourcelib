@@ -9,7 +9,18 @@ import textwrap
 
 import pytest
 
-from resourcelib import load, render, validate
+from resourcelib import (
+    items_by_kind,
+    items_by_status,
+    items_by_topic,
+    iter_papermap_eligible,
+    kind_counts,
+    load,
+    render,
+    status_counts,
+    topic_counts,
+    validate,
+)
 from resourcelib.validator import ValidationError
 
 
@@ -209,6 +220,42 @@ def test_cli_build(tmp_path):
     assert out.exists()
     text = out.read_text()
     assert "rl-grid" in text
+
+
+def test_aggregate_kind_and_eligible(tmp_path):
+    p = _write(tmp_path / "doc.yaml", _papermap_doc())
+    doc = load(p)
+
+    by_kind = items_by_kind(doc)
+    assert set(by_kind.keys()) == {"paper", "tool"}
+    assert len(by_kind["paper"]) == 2
+    assert len(by_kind["tool"]) == 1
+
+    assert kind_counts(doc)["paper"] == 2
+    assert kind_counts(doc)["tool"] == 1
+
+    eligible = list(iter_papermap_eligible(doc))
+    assert len(eligible) == 1
+    assert eligible[0].id == "a-paper"
+    assert eligible[0].papermap_category == "reckoning"
+
+
+def test_aggregate_topic_and_status(tmp_path):
+    p = _write(tmp_path / "doc.yaml", _minimal_doc())
+    doc = load(p)
+
+    counts = topic_counts(doc)
+    # paper-a has [alpha]; tool-b has [alpha, beta]
+    assert counts["alpha"] == 2
+    assert counts["beta"] == 1
+
+    by_topic = items_by_topic(doc)
+    assert {i.id for i in by_topic["alpha"]} == {"paper-a", "tool-b"}
+    assert {i.id for i in by_topic["beta"]} == {"tool-b"}
+
+    by_status = items_by_status(doc)
+    assert len(by_status["published"]) == 2
+    assert status_counts(doc)["published"] == 2
 
 
 def test_cli_export_to_papermap(tmp_path):

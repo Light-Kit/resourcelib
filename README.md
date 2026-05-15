@@ -140,6 +140,41 @@ Multiple chips selected within a row are **OR**; the rows **AND**
 together. Click a chip to toggle it. The filter logic is ~50 lines of
 vanilla JS embedded in the page — no build step, no React, no jQuery.
 
+## Plugins
+
+The core stays small: schema + validator + renderer + the papermap export.
+Anything richer — views, statistics, dossier generation, alternate
+renderers — lives in a separate package that depends on resourcelib.
+
+A plugin is just a pip package that:
+
+1. Declares `dependencies = ["resourcelib>=0.2"]`
+2. Imports the data model: `from resourcelib import load, validate, Doc, Item`
+3. (Usually) imports aggregation helpers: `from resourcelib import items_by_topic, kind_counts, iter_papermap_eligible, ...`
+4. Ships its own CLI (e.g. `resourcelib-views ...`)
+
+The stable surface area is intentionally tiny — the `Doc` and `Item`
+dataclasses, plus the helpers in `resourcelib.aggregate`. Treat these
+as the contract; everything else is internal.
+
+### Aggregation helpers
+
+| Helper | Returns | Use for |
+| --- | --- | --- |
+| `items_by_kind(doc)` | `dict[str, list[Item]]` | Group items by their kind field. |
+| `items_by_topic(doc)` | `dict[str, list[Item]]` | Multi-counted — one item per topic it carries. |
+| `items_by_status(doc)` | `dict[str, list[Item]]` | Items with a non-empty status. |
+| `kind_counts(doc)` | `Counter[str]` | How many items of each kind. |
+| `topic_counts(doc)` | `Counter[str]` | Topic frequency across the corpus. |
+| `status_counts(doc)` | `Counter[str]` | Status-distribution. |
+| `iter_papermap_eligible(doc)` | `Iterator[Item]` | The citable subset — `kind: paper` + `papermap_category:`. |
+
+### First-party plugins
+
+- [`resourcelib-views`](https://github.com/Light-Kit/resourcelib-views) —
+  ranked dossier pages (top people / institutes / themes) generated from
+  the YAML.
+
 ## The papermap bridge
 
 `resourcelib export --to-papermap data.yaml` walks the items, keeps the
